@@ -24,12 +24,9 @@
     "scripts": {
         "start": "gatsby develop",
         "build": "gatsby build",
-        "netlify": "npm run test && npm run build",
+        "netlify": "npm run build",
         "lint": "eslint .",
-        "lint:fix": "eslint . --fix",
-        "test": "jest --passWithNoTests",
-        "test:watch": "npm run test -- --watch",
-        "new": "plop"
+        "lint:fix": "eslint . --fix"
     },
     "dependencies": {
         "@bradgarropy/gatsby-plugin-seo": "^1.0.0",
@@ -55,11 +52,7 @@
         "@bradgarropy/eslint-config": "^1.1.0",
         "@bradgarropy/eslint-config-react": "^1.0.0",
         "@hot-loader/react-dom": "^17.0.1",
-        "@testing-library/jest-dom": "^5.11.6",
-        "@testing-library/react": "^11.2.2",
-        "@testing-library/user-event": "^12.6.0",
         "babel-eslint": "^10.1.0",
-        "babel-jest": "^26.6.3",
         "eslint": "^7.16.0",
         "eslint-config-prettier": "^7.1.0",
         "eslint-plugin-jsx-a11y": "^6.4.1",
@@ -67,8 +60,6 @@
         "eslint-plugin-react-hooks": "^4.2.0",
         "eslint-plugin-simple-import-sort": "^7.0.0",
         "identity-obj-proxy": "^3.0.0",
-        "jest": "^26.6.3",
-        "jest-styled-components": "^7.0.3",
         "plop": "^2.7.4",
         "prettier": "^2.2.1",
         "react": "^17.0.1",
