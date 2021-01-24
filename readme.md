@@ -20,8 +20,9 @@
         >
     </a>
 </p>
+
 ## Forked From Brad Garropy
 
-![Check out his original project](https://github.com/bradgarropy/bg-codes)
+[Check out his original project](https://github.com/bradgarropy/bg-codes)
  
 
