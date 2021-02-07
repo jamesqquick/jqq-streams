@@ -4,8 +4,8 @@ import styled from "styled-components"
 const VideoWrapper = styled.div`
     width: ${({width}) => width};
     box-sizing: content-box;
-    border: 1.8rem solid ${({theme}) => theme.colors.black};
-    box-shadow: 0 0 20px 0 ${({theme}) => theme.colors.shadow};
+    /* border: 1.8rem solid ${({theme}) => theme.colors.black}; */
+    box-shadow: 0 0 0px 10px ${({theme}) => theme.colors.black};
     border-radius: 10px;
     &:before {
         display: block;

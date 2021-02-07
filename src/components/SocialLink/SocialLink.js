@@ -8,7 +8,7 @@ const SocialLinkWrapper = styled.a`
     transition: all 300ms ease-out;
 
     &:hover {
-        color: ${({theme}) => theme.colors.purple};
+        color: ${({theme}) => theme.colors.red};
     }
 `
 

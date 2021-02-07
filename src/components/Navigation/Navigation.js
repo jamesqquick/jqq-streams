@@ -1,4 +1,4 @@
-import {Link} from "gatsby"
+import {Link, navigate} from "gatsby"
 import {useEffect, useState} from "react"
 import styled from "styled-components"
 
@@ -24,12 +24,38 @@ const NavigationLink = styled(Link)`
     }
 `
 
+const routesPaths = [
+    "/",
+    "/talking/",
+    // "/sharing/",
+    "/coding/",
+    "/interview/",
+    "/pairing/",
+]
+
 const Navigation = () => {
     const [isVisible, setIsVisible] = useState(false)
+    //TODO: get current route
+    const currentRoute = window.location.pathname
+    let currentIndex = routesPaths.indexOf(currentRoute)
 
     const onKeyDown = event => {
         if (event.code === "ControlLeft") {
             setIsVisible(isVisible => !isVisible)
+        } else if (event.code === "ArrowLeft") {
+            if (currentIndex === 0) {
+                navigate(routesPaths[routesPaths.length - 1])
+                currentIndex = routesPaths.length - 1
+            } else {
+                navigate(routesPaths[--currentIndex])
+            }
+        } else if (event.code === "ArrowRight") {
+            if (currentIndex === routesPaths.length - 1) {
+                navigate(routesPaths[0])
+                currentIndex = 0
+            } else {
+                navigate(routesPaths[++currentIndex])
+            }
         }
     }
 
@@ -43,9 +69,9 @@ const Navigation = () => {
 
     return (
         <StyledNavigation role="navigation" show={isVisible}>
-            <NavigationLink to="/brb">brb</NavigationLink>
+            <NavigationLink to="/">brb</NavigationLink>
             <NavigationLink to="/talking">talking</NavigationLink>
-            <NavigationLink to="/sharing">sharing</NavigationLink>
+            {/* <NavigationLink to="/sharing">sharing</NavigationLink> */}
             <NavigationLink to="/coding">coding</NavigationLink>
             <NavigationLink to="/interview">interview</NavigationLink>
             <NavigationLink to="/pairing">pairing</NavigationLink>

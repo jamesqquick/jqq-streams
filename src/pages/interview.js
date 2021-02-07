@@ -12,7 +12,7 @@ const Videos = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     display: grid;
-    grid-gap: 5px;
+    grid-gap: 50px;
     grid-auto-flow: column;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
@@ -23,7 +23,7 @@ const HostVideo = styled(Video)``
 const HostHandle = styled(Handle)`
     justify-self: start;
     z-index: 1;
-    box-shadow: 0 0 20px 0 ${({theme}) => theme.colors.shadow};
+    /* box-shadow: 0 0 20px 0 ${({theme}) => theme.colors.shadow}; */
     clip-path: inset(0px -20px -20px -20px);
 `
 
@@ -32,7 +32,7 @@ const GuestVideo = styled(Video)``
 const GuestHandle = styled(Handle)`
     justify-self: end;
     z-index: 1;
-    box-shadow: 0 0 20px 0 ${({theme}) => theme.colors.shadow};
+    /* box-shadow: 0 0 20px 0 ${({theme}) => theme.colors.shadow}; */
     clip-path: inset(0px -20px -20px -20px);
 `
 

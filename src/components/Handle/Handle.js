@@ -3,8 +3,8 @@ import styled from "styled-components"
 
 const StyledHandle = styled.div`
     font-size: 3.6rem;
-    background-color: ${({theme}) => theme.colors.white};
-    padding: 1.2rem 2.4rem;
+    /* background-color: ${({theme}) => theme.colors.white}; */
+    /* padding: 1.2rem 2.4rem; */
 `
 
 const Handle = ({handle, ...props}) => {

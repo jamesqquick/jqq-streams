@@ -1,30 +1,23 @@
 import SEO from "@bradgarropy/gatsby-plugin-seo"
-import BottomBar from "components/BottomBar"
 import Handle from "components/Handle"
 import Video from "components/Video"
 import {useStream} from "hooks"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import SocialBar from "components/SocialBar"
 
 const GuestVideo = styled(Video)`
     position: absolute;
-    right: 0;
-    bottom: 5rem;
-    transform: translateY(-100%);
-    border-right: none;
-    border-bottom: none;
-    clip-path: inset(-20px 0px 0px -20px);
-    border-top-left-radius: 10rem;
+    right: 20px;
+    bottom: calc(5rem - 8px);
+    transform: translateY(-115%);
     z-index: 1;
 `
 
 const HostVideo = styled(Video)`
     position: absolute;
-    right: 0;
-    bottom: 5rem;
-    border-right: none;
-    border-bottom: none;
-    clip-path: inset(0px 0px 0px -20px);
+    right: 20px;
+    bottom: calc(5rem - 8px);
     z-index: 1;
 `
 
@@ -49,7 +42,7 @@ const PairingPage = () => {
                 <StyledHandle handle="jamesqquick" />
             </HostVideo>
 
-            <BottomBar />
+            <SocialBar />
         </>
     )
 }
