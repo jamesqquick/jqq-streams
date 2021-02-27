@@ -11,6 +11,7 @@ module.exports = async function (context, req) {
         console.error(err)
         context.res = {
             status: 500,
+            body: err,
         }
     }
 }
