@@ -36,7 +36,7 @@ const routesPaths = [
 const Navigation = () => {
     const [isVisible, setIsVisible] = useState(false)
     //TODO: get current route
-    const currentRoute = window.location.pathname
+    const currentRoute = window ? window.location.pathname : ""
     let currentIndex = routesPaths.indexOf(currentRoute)
 
     const onKeyDown = event => {
