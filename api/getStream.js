@@ -1,14 +1,16 @@
 require("dotenv").config()
 const {getStream} = require("../src/utils/airtable")
-exports.handler = async function () {
+
+module.exports = async function (context, req) {
     try {
         const stream = await getStream()
-        return {
-            statusCode: 200,
-            body: JSON.stringify(stream),
+        context.res = {
+            body: stream,
         }
     } catch (err) {
         console.error(err)
-        return {statusCode: 500}
+        context.res = {
+            status: 500,
+        }
     }
 }

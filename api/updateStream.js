@@ -1,22 +1,26 @@
 require("dotenv").config()
 const {updateStream} = require("../src/utils/airtable")
-exports.handler = async function (event) {
-    const {id, title, guestHandle, passcode} = JSON.parse(event.body)
+
+module.exports = async function (context, req) {
+    const {id, title, guestHandle, passcode} = req.body
     if (!passcode || passcode !== process.env.FORM_PASSCODE) {
-        return {
-            statusCode: 401,
+        context.res = {
+            status: 401,
         }
+        return
     }
     const updates = {title, guestHandle}
 
     try {
         const updatedStream = await updateStream(id, updates, passcode)
-        return {
-            statusCode: 200,
-            body: JSON.stringify(updatedStream),
+        context.res = {
+            status: 200,
+            body: updatedStream,
         }
     } catch (err) {
         console.error(err)
-        return {statusCode: 500}
+        context.res = {
+            status: 500,
+        }
     }
 }
