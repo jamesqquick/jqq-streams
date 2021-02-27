@@ -25,8 +25,15 @@ const Tagline = styled.span`
 const IndexPage = () => {
     //TODO: get text from query param
     // const params = location.search
-    const params = new URLSearchParams(document.location.search.substring(1))
-    const text = params.get("text")
+
+    let text = ""
+    if (typeof window !== `undefined`) {
+        const params = new URLSearchParams(
+            document.location.search.substring(1),
+        )
+        text = params.get("text")
+    }
+
     return (
         <>
             <SEO title="🎥 James Q Quick Twitch BRB" description="" />
