@@ -1,5 +1,5 @@
 require("dotenv").config()
-const {updateStream} = require("../src/utils/airtable")
+const {updateStream} = require("../../src/utils/airtable")
 
 module.exports = async function (context, req) {
     const {id, title, guestHandle, passcode} = req.body
