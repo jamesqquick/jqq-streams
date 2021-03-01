@@ -6,7 +6,7 @@ const SocialLinkWrapper = styled.a`
     height: 40px;
     color: ${({theme}) => theme.colors.black};
     transition: all 300ms ease-out;
-
+    color: ${({theme}) => theme.colors.white};
     &:hover {
         color: ${({theme}) => theme.colors.red};
     }

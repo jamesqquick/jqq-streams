@@ -44,7 +44,7 @@ const Navigation = () => {
 
     const onKeyDown = event => {
         if (event.code === "ControlLeft") {
-            setIsVisible(isVisible => !isVisible)
+            //setIsVisible(isVisible => !isVisible)
         } else if (event.code === "ArrowLeft") {
             if (currentIndex === 0) {
                 navigate(routesPaths[routesPaths.length - 1])

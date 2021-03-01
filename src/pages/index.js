@@ -10,41 +10,65 @@ const Hero = styled.div`
     transform: translate(-50%, -50%);
     display: grid;
     justify-items: center;
-    width: 100%;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    margin-top: -5rem;
+`
+
+const Logo = styled.img`
+    max-height: 500px;
+`
+
+const HeaderText = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `
 
 const Tagline = styled.span`
     text-transform: uppercase;
-    font-size: 8.5rem;
-    /* background-color: ${({theme}) => theme.colors.white}; */
+    font-size: 16rem;
     padding: 0 4rem;
     color: ${({theme}) => theme.colors.white};
-    /* transform: skew(-3deg, -3deg); */
+    margin-bottom: 4rem;
+    text-align: center;
+`
+
+const StyledUrl = styled.p`
+    position: absolute;
+    left: 50%;
+    bottom: 2rem;
+    transform: translateX(-50%);
+    font-size: 12rem;
+    margin: 0;
+    color: ${({theme}) => theme.colors.lightBlue};
+    text-transform: uppercase;
 `
 
 const IndexPage = () => {
-    //TODO: get text from query param
-    // const params = location.search
-
-    let text = ""
+    let text = "Starting soon..."
     if (typeof window !== `undefined`) {
         const params = new URLSearchParams(
             document.location.search.substring(1),
         )
-        text = params.get("text")
+        if (params.get("text")) {
+            text = params.get("text")
+        }
     }
-
     return (
         <>
             <SEO title="🎥 James Q Quick Twitch BRB" description="" />
-
-            <Background />
-
+            <Background color="secondary" />
             <Hero>
-                <img src="/logo.png" alt="James Q Quick 'Q' Logo" />
-                {text && <Tagline>{text}</Tagline>}
+                <Logo src="/logo-red.png" alt="James Q Quick Logo" />
+                <HeaderText>
+                    {text && <Tagline>{text}</Tagline>}
+                    <SocialBar bg="blue" />
+                </HeaderText>
             </Hero>
-            <SocialBar />
+            <StyledUrl>jamesqquick.com</StyledUrl>
         </>
     )
 }

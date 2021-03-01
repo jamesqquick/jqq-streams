@@ -19,19 +19,37 @@ const SocialIcons = styled.div`
 
 const Handle = styled.span`
     font-size: 3.2rem;
+    color: ${({theme}) => theme.colors.white};
+    font-weight: 300;
+    text-transform: uppercase;
 `
 
-const Socials = () => {
+const StyledInitial = styled.span`
+    color: ${({theme, highlightColor}) => theme.colors[highlightColor]};
+    font-weight: bold;
+`
+
+const Socials = ({bg = "red"}) => {
+    console.log(bg)
+    const bgToHighlightColor = {
+        red: "blue",
+        blue: "red",
+    }
     return (
         <SocialsWrapper>
             <SocialIcons>
-                <SocialLink platform="instagram" />
                 <SocialLink platform="twitter" />
                 <SocialLink platform="youtube" />
                 <SocialLink platform="github" />
             </SocialIcons>
 
-            <Handle handle="jamesqquick"></Handle>
+            <Handle>
+                @james
+                <StyledInitial highlightColor={bgToHighlightColor[bg]}>
+                    q
+                </StyledInitial>
+                quick
+            </Handle>
         </SocialsWrapper>
     )
 }

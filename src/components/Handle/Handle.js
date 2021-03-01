@@ -8,7 +8,9 @@ const StyledHandle = styled.div`
 `
 
 const Handle = ({handle, ...props}) => {
+    console.log("hey")
     const mention = handle ? `@${handle}` : ""
+    console.log(handle, mention)
     return <StyledHandle {...props}>{mention}</StyledHandle>
 }
 

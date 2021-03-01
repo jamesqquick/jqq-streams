@@ -26,7 +26,7 @@ module.exports = {
             resolve: "gatsby-plugin-web-font-loader",
             options: {
                 google: {
-                    families: ["Montserrat:800"],
+                    families: ["Montserrat:800, 500, 300"],
                 },
             },
         },

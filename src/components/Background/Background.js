@@ -11,8 +11,9 @@ const BackgroundWrapper = styled.img`
     z-index: -1;
 `
 
-const Background = () => {
-    return <BackgroundWrapper src="/background.jpg" alt="liquid" />
+const Background = ({color = "primary"}) => {
+    const imgName = color === "primary" ? "/bg-red.jpg" : "/bg-blue.png"
+    return <BackgroundWrapper src={imgName} alt="textured background" />
 }
 
 export default Background

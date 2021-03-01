@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: Montserrat, sans-serif;
+        font-weight: 800;
     }
 `
 
