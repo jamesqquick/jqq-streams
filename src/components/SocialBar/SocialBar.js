@@ -8,7 +8,6 @@ const SocialBarWrapper = styled.div`
 `
 
 const SocialBar = props => {
-    console.log(props)
     return (
         <SocialBarWrapper>
             <Socials {...props} />

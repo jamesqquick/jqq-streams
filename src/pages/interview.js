@@ -1,5 +1,6 @@
 import SEO from "@bradgarropy/gatsby-plugin-seo"
 import Background from "components/Background"
+import Footer from "components/Footer"
 import Handle from "components/Handle"
 import SocialBar from "components/SocialBar"
 import Video from "components/Video"
@@ -46,14 +47,15 @@ const InterviewPage = () => {
             <Background />
 
             <Videos>
-                <HostVideo width="42.1875vw" />
+                <HostVideo size="md" />
                 <HostHandle handle="jamesqquick" />
 
-                <GuestVideo width="42.1875vw" />
+                <GuestVideo size="md" />
                 <GuestHandle handle={stream?.guestHandle} />
             </Videos>
-
-            <SocialBar />
+            <Footer>
+                <SocialBar />
+            </Footer>
         </>
     )
 }

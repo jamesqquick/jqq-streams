@@ -1,1 +1,1 @@
-export {default} from "./Video"
+export {default, PrimaryVideo, SecondaryVideo, TertiaryVideo} from "./Video"

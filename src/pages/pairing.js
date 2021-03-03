@@ -1,25 +1,12 @@
 import SEO from "@bradgarropy/gatsby-plugin-seo"
 import Handle from "components/Handle"
-import Video from "components/Video"
 import {useStream} from "hooks"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import SocialBar from "components/SocialBar"
-
-const GuestVideo = styled(Video)`
-    position: absolute;
-    right: 20px;
-    bottom: calc(5rem - 8px);
-    transform: translateY(-115%);
-    z-index: 1;
-`
-
-const HostVideo = styled(Video)`
-    position: absolute;
-    right: 20px;
-    bottom: calc(5rem - 8px);
-    z-index: 1;
-`
+import Footer from "components/Footer"
+import Background from "components/Background"
+import {PrimaryVideo, SecondaryVideo, TertiaryVideo} from "components/Video"
 
 const StyledHandle = styled(Handle)`
     position: absolute;
@@ -33,16 +20,20 @@ const PairingPage = () => {
     return (
         <>
             <SEO title="🎥 James Q Quick Twitch Pairing" description="" />
+            <Background />
 
-            <GuestVideo width="31.25vw">
-                <StyledHandle handle={stream?.guestHandle} />
-            </GuestVideo>
+            <PrimaryVideo size="lg" />
 
-            <HostVideo width="31.25vw">
-                <StyledHandle handle="jamesqquick" />
-            </HostVideo>
+            <TertiaryVideo size="sm">
+                {/* <StyledHandle handle={stream?.guestHandle} /> */}
+            </TertiaryVideo>
 
-            <SocialBar />
+            <SecondaryVideo size="sm">
+                {/* <StyledHandle handle="jamesqquick" /> */}
+            </SecondaryVideo>
+            <Footer>
+                <SocialBar />
+            </Footer>
         </>
     )
 }

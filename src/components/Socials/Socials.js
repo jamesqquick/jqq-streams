@@ -30,7 +30,6 @@ const StyledInitial = styled.span`
 `
 
 const Socials = ({bg = "red"}) => {
-    console.log(bg)
     const bgToHighlightColor = {
         red: "blue",
         blue: "red",
