@@ -35,6 +35,7 @@ const Tagline = styled.span`
     color: ${({theme}) => theme.colors.white};
     margin-bottom: 4rem;
     text-align: center;
+    font-variant-numeric: tabular-nums;
 `
 
 const StyledUrl = styled.p`
@@ -49,10 +50,7 @@ const StyledUrl = styled.p`
 `
 
 const CountdownPage = () => {
-    const countdown = useCountdown({minutes: 5})
-    const minutes = countdown.minutes.toString().padStart(2, 0)
-    const seconds = countdown.seconds.toString().padStart(2, 0)
-    const time = `${minutes}:${seconds}`
+    const {formatted} = useCountdown({minutes: 5, format: "mm:ss"})
 
     return (
         <>
@@ -61,7 +59,7 @@ const CountdownPage = () => {
             <Hero>
                 <Logo src="/logo-red.png" alt="James Q Quick Logo" />
                 <HeaderText>
-                    <Tagline>{time}</Tagline>
+                    <Tagline>{formatted}</Tagline>
                     <SocialBar bg="blue" />
                 </HeaderText>
             </Hero>
