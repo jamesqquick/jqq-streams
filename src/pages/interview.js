@@ -51,7 +51,7 @@ const InterviewPage = () => {
                 <HostHandle handle="jamesqquick" />
 
                 <GuestVideo size="md" />
-                <GuestHandle handle={stream?.guestHandle} />
+                <GuestHandle handle={stream?.twitterHandle} />
             </Videos>
             <Footer>
                 <SocialBar />

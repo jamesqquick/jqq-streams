@@ -24,10 +24,12 @@ const getStream = async () => {
         await streamTable
             .select({
                 maxRecords: 1,
+                filterByFormula:
+                    "DATETIME_DIFF( streamDate, today(), 'days') = 0",
             })
             .firstPage(),
     )
-
+    console.log(records)
     if (records.length !== 1) {
         return null
     }
